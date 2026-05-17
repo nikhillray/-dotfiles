@@ -1,0 +1,52 @@
+/* Import the generated colors from pywal */
+@import "/home/zeke/.cache/wal/colors-waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    transition: all 0.4s ease; /* Smooth color shifting */
+}
+
+window#waybar {
+    /* Uses the background color from your wallpaper with 90% opacity */
+    background-color: @background; 
+    opacity: 0.9;
+    border-radius: 20px;
+    min-height: 40px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+#workspaces button {
+    color: @color8; /* Dimmed text */
+    padding: 0 8px;
+    margin: 6px 2px; 
+    border-radius: 12px;
+}
+
+#workspaces button.active {
+    /* Uses two colors from your wallpaper for the pill gradient */
+    background: linear-gradient(45deg, @color4, @color12); 
+    color: @background; /* Dark text on bright pill */
+    padding: 0 15px; 
+    margin: 6px 2px;
+}
+
+#clock, #battery, #network, #pulseaudio, #tray, #mpris {
+    padding: 0 12px;
+    margin: 6px 0;
+    color: @foreground;
+}
+
+#mpris {
+    color: @color6; /* Accent color for music info */
+}
+
+/* Battery logic */
+#battery.charging { color: @color2; }
+#battery.critical:not(.charging) {
+    background-color: @color1;
+    color: @foreground;
+    border-radius: 10px;
+}

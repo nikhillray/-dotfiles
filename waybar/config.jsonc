@@ -1,0 +1,60 @@
+{
+ "position": "top",
+  "layer": "top",
+  "height": 30,
+  "spacing": 0,
+  "reload_style_on_change": true,
+  "width": 100,
+  "margin-top": 3,
+  "margin-left": 40,
+  "margin-right": 40,
+
+    "modules-center": [
+        "clock",
+        "mpris",
+        "hyprland/workspaces",
+        "pulseaudio",
+        "network",
+        "tray"
+
+    ],
+       "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}", // 12-hour format with date
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%", 
+        "format-muted": "󰝟 Muted",
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 Wired",
+        "format-disconnected": "󰖪 Off",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "󰏤 {dynamic}",
+    "dynamic-len": 40,
+    "dynamic-order": ["title", "artist"], // This line removes the time/position
+    "player-icons": {
+        "firefox": "󰈹",
+        "spotify": "󰓇",
+        "default": "󰎆"
+    }
+}
+}

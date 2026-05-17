@@ -1,0 +1,38 @@
+/* Gruvbox Colors */
+@define-color bg #202020;
+@define-color fg #ebdbb2;
+@define-color blue #458588;
+@define-color gray #928374;
+
+* {
+    font-family: "Cherry";
+    font-size: 13px;
+    border: none;
+    border-radius: 0; /* dwm is strictly rectangular */
+}
+
+window#waybar {
+    background: @bg;
+    color: @fg;
+}
+
+#workspaces button, #tags button {
+    padding: 0 5px;
+    color: @gray;
+}
+
+#workspaces button.focused, #tags button.focused, #workspaces button.active {
+    background-color: @blue;
+    color: @fg;
+    border-bottom: 2px solid @fg; /* Optional: adds that extra 'active' feel */
+}
+
+/* This creates the 'box' look for the modules on the right */
+#pulseaudio, #network, #clock, #disk, #memory {
+    padding: 0 6px;
+    margin: 0;
+}
+
+#tray {
+    margin-left: 10px;
+}

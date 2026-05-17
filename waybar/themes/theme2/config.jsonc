@@ -1,0 +1,77 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30, // Increased height for better breathing room
+    "margin-top": 0,
+    "spacing": 4,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "cpu",
+        "memory"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "hyprland/language",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": "  {usage}%"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "󰍛 {percentage}%"
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p  󰸗 %d/%m}", // 12-hour format with date
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "󰓃 {volume}%", 
+        "format-muted": "󰓄 Muted",
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 Wired",
+        "format-disconnected": "󰖪 Off",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󱐋 {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "hyprland/language": {
+        "format": "󰗊 {short}",
+        "format-en": "EN",
+        "format-fa": "PE"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}

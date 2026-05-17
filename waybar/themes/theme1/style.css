@@ -1,0 +1,64 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(28, 28, 28, 0.8); /* Dark gray with transparency */
+    color: #ebdbb2;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 12px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #928374;
+}
+
+#workspaces button.active {
+    color: #ebdbb2;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    color: #ebdbb2;
+}
+
+/* Adds a small separator feel between modules */
+#clock {
+    font-weight: bold;
+}
+
+#battery.charging {
+    color: #b8bb26;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #fb4934;
+    color: #fbf1c7;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ebdbb2;
+        color: #282828;
+    }
+}
