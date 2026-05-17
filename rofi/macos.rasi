@@ -1,0 +1,112 @@
+/**
+ * Gruvbox macOS-style Spotlight Theme
+ */
+
+* {
+    /* Gruvbox Colors */
+    bg0:      #282828e6; /* Dark background with alpha */
+    bg1:      #3c3836;
+    fg0:      #fbf1c7;
+    fg1:      #ebdbb2;
+    fg3:      #bdae93;
+    accent:   #ebdbb2;
+    urgent:   #cc241d;
+
+    background-color:   @bg0;
+    text-color:         @fg0;
+    margin:             0;
+    padding:            0;
+    spacing:            0;
+}
+
+window {
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    width:              500px;
+    x-offset:           0;
+    y-offset:           -150px; /* Moves it slightly up like Spotlight */
+
+    enabled:            true;
+    border-radius:      16px;
+    cursor:             "default";
+    background-color:   @bg0;
+}
+
+mainbox {
+    enabled:            true;
+    spacing:            0px;
+    background-color:   transparent;
+    children:           [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:            true;
+    spacing:            10px;
+    padding:            25px;
+    background-color:   transparent;
+    text-color:         @fg0;
+    children:           [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:            true;
+    background-color:   transparent;
+    text-color:         inherit;
+}
+
+entry {
+    enabled:            true;
+    background-color:   transparent;
+    text-color:         inherit;
+    cursor:             text;
+    placeholder:        " ";
+    placeholder-color:  @fg3;
+}
+
+listview {
+    enabled:            true;
+    columns:            1;
+    lines:              5;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    
+    spacing:            5px;
+    margin:             0px 15px 15px 15px;
+    background-color:   transparent;
+}
+
+element {
+    enabled:            true;
+    spacing:            10px;
+    padding:            10px;
+    border-radius:      10px;
+    background-color:   transparent;
+    text-color:         @fg1;
+    cursor:             pointer;
+}
+
+element selected.normal {
+    background-color:   @accent;
+    text-color:         @bg0;
+}
+
+element-icon {
+    background-color:   transparent;
+    text-color:         inherit;
+    size:               32px;
+    cursor:             inherit;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    cursor:             inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+}

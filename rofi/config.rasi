@@ -1,0 +1,12 @@
+configuration {
+    modi: "drun,run"; 
+    show-icons: true;
+    icon-theme: "Gruvbox-Plus-Dark";  
+    display-drun: " ";
+    display-run: "Run";
+    drun-display-format: "{icon} {name}";
+    sort: true;
+    sorting-method: "fzf";
+}
+
+@theme "gruvbox"
